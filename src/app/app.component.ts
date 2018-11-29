@@ -26,7 +26,7 @@ export class SidebarComponent {}
   `
 })
 export class ArticleComponent {
-  @Input()article:  Object;
+  @Input()article:  Article;
 }
 
 @Component({
@@ -45,24 +45,25 @@ export class ArticleComponent {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  articles: Object[];
+  articles: Article[];
   constructor() {
-    this.articles = [{
-      title: 'The Angular 2 screencast',
-      description: 'The easiest way to learn Angular 5 is with Fullstack.io!'
-    },
-    {
-      title: 'Fullstack React',
-      description: 'Want to learn React too?'
-    },
-    {
-      title: 'Vue is new',
-      description: 'And pretty cool syntax too'
-    },
-    {
-      title: 'But what about elm?',
-      description: 'Everybody likes elm'
-    }
+    this.articles = [
+      new Article(
+      'The Angular 2 screencast',
+      'The easiest way to learn Angular 5 is with Fullstack.io!')
+    ,
+    new Article(
+     'Fullstack React',
+      'Want to learn React too?'
+    ),
+    new Article(
+      'Vue is new',
+      'And pretty cool syntax too'
+    ),
+    new Article(
+      'But what about elm?',
+      'Everybody likes elm'
+    )
   ]
   }
  
