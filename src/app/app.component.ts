@@ -32,10 +32,10 @@ export class SidebarComponent {}
     <div class="meta date">
       Today
     </div>
-    <div class = "meta description">
+    <div class = 'meta description'>
       <p>{{article.description}}</p>
     </div>
-    <div class = "extra">
+    <div class = 'extra'>
       <a href='#' target='_blank' class='ui right floated button primary'>
       Read more
       <i class='right chevron icon'></i>
@@ -51,9 +51,9 @@ export class ArticleComponent {
 @Component({
   selector: 'app-root',
   template: `
-  <div id = "container">
+  <div class = "ui container">
   <app-sidebar></app-sidebar>
-    <div id = "content">
+    <div class = "ui divided items">
 
     <app-article
     *ngFor="let article of articles"
