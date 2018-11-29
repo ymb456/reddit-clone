@@ -16,6 +16,7 @@ export class SidebarComponent {}
   `
   <div>
   <h2>{{article.title}}</h2>
+  <p>{{article.description}}</p>
   </div>
   `
 })
@@ -29,7 +30,9 @@ export class ArticleComponent {
   <div id = "container">
   <app-sidebar></app-sidebar>
     <div id = "content">
+
     <app-article
+    *ngFor="let article of articles"
     [article]="article"></app-article>
     </div>
   </div>
@@ -37,12 +40,25 @@ export class ArticleComponent {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  article: Object;
+  articles: Object[];
   constructor() {
-    this.article = {
+    this.articles = [{
       title: 'The Angular 2 screencast',
       description: 'The easiest way to learn Angular 5 is with Fullstack.io!'
+    },
+    {
+      title: 'Fullstack React',
+      description: 'Want to learn React too?'
+    },
+    {
+      title: 'Vue is new',
+      description: 'And pretty cool syntax too'
+    },
+    {
+      title: 'But what about elm?',
+      description: 'Everybody likes elm'
     }
+  ]
   }
  
 }
