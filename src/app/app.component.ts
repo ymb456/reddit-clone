@@ -19,9 +19,28 @@ export class SidebarComponent {}
   selector: 'app-article',
   template:
   `
-  <div>
-  <h2>{{article.title}}</h2>
-  <p>{{article.description}}</p>
+  <div class="image">
+  <img src="https://placekitten.com/g/400/300"/>
+  </div>
+  <div class = "content">
+    <div class = 'header'>
+      {{article.title}}
+    </div>
+    <div class="meta">
+      Voting and votes will go here
+    </div>
+    <div class="meta date">
+      Today
+    </div>
+    <div class = "meta description">
+      <p>{{article.description}}</p>
+    </div>
+    <div class = "extra">
+      <a href='#' target='_blank' class='ui right floated button primary'>
+      Read more
+      <i class='right chevron icon'></i>
+      </a>
+    </div>
   </div>
   `
 })
@@ -38,7 +57,7 @@ export class ArticleComponent {
 
     <app-article
     *ngFor="let article of articles"
-    [article]="article"></app-article>
+     [article]="article" class='item'></app-article>
     </div>
   </div>
   `,
